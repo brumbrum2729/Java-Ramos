@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centered Output with PyScript</title>
+  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    .output {
+      font-size: 20px;
+      white-space: pre;
+    }
+  </style>
+</head>
+<body>
+  <h1>Centered Output</h1>
+  <div id="output" class="output"></div>
+  
+  <py-script>
+    lines = [
+        "Hello programming 2",
+        "Lejohn D. Ramos",
+        "24-0825-475"
+    ]
+    terminal_width = 80
+    output_div = Element("output")
+    for line in lines:
+        padding = (terminal_width - len(line)) // 2
+        centered_line = " " * padding + line
+        output_div.element.innerText += centered_line + "\n"
+  </py-script>
+</body>
+</html>
