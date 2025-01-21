@@ -24,17 +24,19 @@
   <div id="output" class="output"></div>
   
   <py-script>
-    lines = [
-        "Hello programming 2",
-        "Lejohn D. Ramos",
-        "24-0825-475"
-    ]
-    terminal_width = 80
-    output_div = Element("output")
-    for line in lines:
-        padding = (terminal_width - len(line)) // 2
-        centered_line = " " * padding + line
-        output_div.element.innerText += centered_line + "\n"
+from js import document
+
+lines = [
+    "Hello programming 2",
+    "Lejohn D. Ramos",
+    "24-0825-475"
+]
+terminal_width = 80
+output_div = document.getElementById("output")
+for line in lines:
+    padding = (terminal_width - len(line)) // 2
+    centered_line = " " * padding + line
+    output_div.innerText += centered_line + "\n"
   </py-script>
 </body>
 </html>
